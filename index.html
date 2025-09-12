@@ -38,6 +38,8 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+
 </head>
 <body>
 
@@ -149,7 +151,30 @@ VWSD challenge); 2. images that share the same broad sense as the target word.
         <h2 class="title">Data and Further Information</h2>
         <div class="content has-text-justified">
           <p>
-            We will release here the data.
+
+            <b>Task Details</b>: Given one query consisting of three or more words, find the correct image described by the query out of the ten possible ones. <br><br>
+
+            <b>Query Details</b>: To create the query we combine: the lemma of the correct synset, one of the lemmas of the hypernym of the correct synset, and a word from the gloss of the correct synset. This process is done manually for the test set and automatically for the train set. <br><br>
+
+            <b>Images Details</b>: All images will be resized to 336x336 to strike a balance between effectiveness and efficiency. <br><br>
+
+            <b>Copyright</b>: Our work leverages BabelNet, the data is subject to its license. The BabelNet Non-Commercial License allows users to share and adapt data, as long as they belong to a research institution.  <br><br>
+
+            <b>Evaluation metrics</b>: HIT@1 and MRR. We will have two different leaderboards for each metric.  <br>
+            Given r = [r<sub>1</sub>, ..., r<sub>n</sub>], where n is the cardinality of the test set and r<sub>i</sub> is the rank of
+            the correct image given as output by the model, MRR is defined as:
+
+            $$ MRR = \frac{1}{n} \sum_{i=1}^{n}{\frac{1}{r_i}} $$
+
+            This metric is used to evaluate the goodness of the ranking; the closer r<sub>i</sub> is to 1 (i.e., the first position in the ranking), the better the result. HIT@1 is defined as:
+
+            $$ HIT@1 = \frac{1}{n} \sum_{i=1}^{n}{I(r_i)} $$
+
+            where I is a function that returns 1 if r<sub>i</sub> == 1 (i.e. the correct image is ranked first), and 0 otherwise. 
+Therefore, this metric assesses the model's ability to select the correct image as the best possible candidate. <br><br>
+
+          <b>We will release here the data.</b>
+
           </p>
         </div>
       </div>
