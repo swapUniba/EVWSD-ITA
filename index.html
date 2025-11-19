@@ -177,6 +177,14 @@ Therefore, this metric assesses the model's ability to select the correct image 
 
           <b>Training data has been released!</b> You can find it at the following <a href="https://huggingface.co/datasets/swap-uniba/EVWSD-ITA"><font color="blue">link</font></a>.
 
+          <br><br><font color="red"><b>ADDITIONAL DETAILS FOR THE TEST SET</b></font><br>
+          For the test set, we provide a .jsonl file (for candidate images and query for each instance) and a .zip file (for images). <br>
+          Each instance contains a textual query (manually written following the train set methodology) and a list of candidate image paths (identified by index). <br>
+          <br>
+          Your submission should be a file containing the ranking (or prediction) for every instance in the ".jsonl" file. <br>
+          We will provide baseline results using this <a href="https://huggingface.co/sentence-transformers/clip-ViT-B-32-multilingual-v1"><font color="blue">model</font></a>. <br><br>
+          Finally, note that the words in the textual query have been shuffled to avoid possible attempts to leverage external tools (e.g. gaining information regarding the lemma of the target sense).
+
           </p>
         </div>
       </div>
